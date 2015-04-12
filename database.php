@@ -6,7 +6,7 @@ if (!$link = mysql_connect('localhost', 'root', '')) {
     exit;
 }
 
-if (!mysql_select_db('Speeds', $link)) {
+if (!mysql_select_db('createdb', $link)) {
     echo 'Could not select database';
     exit;
 }

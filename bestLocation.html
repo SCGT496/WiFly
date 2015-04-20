@@ -1,27 +1,29 @@
 <?php
-  $dbc = mysql_connect('localhost', 'leslie0523', 'secret15')
+  $username = "leslie0523";
+  $password = "secret15";
+  $hostname = "localhost";
+  $dbc = mysql_connect($hostname, $username, $password)
     or die('Connection Error: ' . mysql_error());
+  echo "Connected to MySQL<br>";
 
   mysql_select_db('yourusername', $dbc) or die('DB Selection Error' .mysql_error());
             
   $data = mysql_query(
     /*Speed of Best Wifi Speed on Campus*/
-    SELECT Wifi_speed
+    "SELECT Wifi_speed
     FROM Instance as I, Location as L
     WHERE I.GPS_location = L.GPS_location
       AND I.Wifi_speed <= ALL ( SELECT Wifi_speed
-                  FROM Instance );
-
-    )
+                  FROM Instance )")
     or die('Query Error: ' . mysql_error());
 
   $info = mysql_query(
     /*Location with Best WiFi Speed*/
-    SELECT GPS_location
+    "SELECT GPS_location
     FROM Instance as I, Location as L
     WHERE I.GPS_location = L.GPS_location
       AND I.Wifi_speed <= ALL ( SELECT Wifi_speed
-                   FROM Instance )
+                   FROM Instance )")
     or die('Query Error: ' . mysql_error());
 
   Print "<th>Best speed:</th>".$data['Wifi_speed'] . "</td>";
@@ -30,9 +32,3 @@
   mysql_close($dbc)
   or die(mysql_error());
 ?>
-
-
-
-
-
-

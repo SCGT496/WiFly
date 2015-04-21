@@ -55,7 +55,7 @@ body #centercontent { margin-left:201px;
 margin-right:201px;
 }
 
-
+.modal-footer {   border-top: 0px; }
 
 #banner { background:white;
 height:90px;

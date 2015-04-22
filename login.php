@@ -1,6 +1,7 @@
 
   <?php
   // logs into SQL locally
+  // when connected online, will need to be matched to correct host server, username, and password
     $username = "root";
     $password = "";
     $hostname = "localhost";
@@ -11,6 +12,7 @@
     
     mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
     
+    // will take input from the user, and check in database if login information matches any already in the database
     $Username = $_POST['inputEmail'];
     $Pass = $_POST['inputPassword'];    
     $query = "(

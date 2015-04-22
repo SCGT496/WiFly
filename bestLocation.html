@@ -1,12 +1,14 @@
 <?php
-  $username = "leslie0523";
-  $password = "secret15";
+  // logs into SQL locally
+  // when connected online, will need to be matched to correct host server, username, and password
+  $username = "root";
+  $password = "";
   $hostname = "localhost";
   $dbc = mysql_connect($hostname, $username, $password)
     or die('Connection Error: ' . mysql_error());
   echo "Connected to MySQL<br>";
 
-  mysql_select_db('yourusername', $dbc) or die('DB Selection Error' .mysql_error());
+  mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
             
   $data = mysql_query(
     /*Speed of Best Wifi Speed on Campus*/

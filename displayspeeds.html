@@ -1,33 +1,22 @@
-<?php
-  // logs into SQL locally
-  // when connected online, will need to be matched to correct host server, username, and password
-  $username = "root";
-  $password = "";
-  $hostname = "localhost";
-  $dbc = mysql_connect($hostname, $username, $password)
-    or die('Connection Error: ' . mysql_error());
-  echo "Connected to MySQL<br>";
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>View All Speeds</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+  <body>
+    <h2>WiFi Speeds in the System</h2>
 
-  mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
-  
-  // Find Wifi Speeds Already Found Inside of Database
-  $data = "(
-
-  )";
-
-  // if result is false, it will throw an error showing it did not work 
-  $result = mysql_query($data, $dbc)
-      or die('Query Error: ' . mysql_error());
-
-  // Display the buildings with these speeds as well
-  $info = "(
-  
-  )";
-
-  $result2 = mysql_query($info, $dbc)
-      or die('Query Error: ' . mysql_error());
-
-
-  or die('Query Error: ' . mysql_error());
-
-?>
+    <p>Speeds Recorded in the System</p>
+      <form method="" action="displayspeeds.php">
+      </form>
+      <div id="topcontent">
+        <p align="center">
+          <a href="index2.html">
+            Return to Homepage</a>
+        </p>
+      </div>
+  </body>
+</html>

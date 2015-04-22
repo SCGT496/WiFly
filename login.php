@@ -28,7 +28,7 @@
     if(!$result) {
        die("<script>location.href = 'login.html'</script>");  // if the information is incorrect, then return to login page
     } else {
-       die("<script>location.href = 'index.html'</script>");  // if the information is correct, take them to index page
+       die("<script>location.href = 'index2.html'</script>");  // if the information is correct, take them to index page
     }
 
     mysql_close($dbc);

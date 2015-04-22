@@ -23,11 +23,14 @@
       or die('Query Error: ' . mysql_error());
 
 
-    if(!$result) var_dump("not correct");
+    if(!$result) {ob_start();
+       die("<script>location.href = 'login.html'</script>");
+    } else {
+       die("<script>location.href = 'index.html'</script>");
+    }
 
     mysql_close($dbc);
 
     echo 'Thanks you for logging in.<br />';
     echo 'Welcome ' . $Username;
     
-  ?>

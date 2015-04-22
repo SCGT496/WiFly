@@ -22,11 +22,11 @@
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());
 
-
-    if(!$result) {ob_start();
-       die("<script>location.href = 'login.html'</script>");
+    // will check if the result is true (correct login information is input
+    if(!$result) {
+       die("<script>location.href = 'login.html'</script>");  // if the information is incorrect, then return to login page
     } else {
-       die("<script>location.href = 'index.html'</script>");
+       die("<script>location.href = 'index.html'</script>");  // if the information is correct, take them to index page
     }
 
     mysql_close($dbc);

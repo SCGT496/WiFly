@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -29,8 +28,6 @@
     $query = "INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
               VALUES(".$GPS_location.",".$Floor.",".$Room_number.",".$Street_address.")";
 
-    
-
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());
 
@@ -44,3 +41,4 @@
     echo ', GPS location: ' . $GPS_location . '<br />';
     
   ?>
+

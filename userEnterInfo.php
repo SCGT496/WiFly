@@ -18,18 +18,18 @@
 
     $dbc = mysql_connect($hostname, $username, $password)
       or die('Connection Error: ' . mysql_error());
-    echo "Connected to MySQL<br>";
 
-    mysql_select_db('yourusername', $dbc) or die('DB Selection Error' .mysql_error());
+    mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
     
-    $GPS_location = /*TODO*/;
-    $Building_name = $_POST['Building_name'];
-    $Floor = $_POST['Floor'];
-    $Room_number = $_POST['Room_number'];
-    $Street_address = $_POST['Street_address'];
+    $GPS_location = $_GET['Building_name'];
+    $Floor = $_GET['Floor'];
+    $Room_number = $_GET['Room_number'];
+    $Street_address = $_GET['Street_address'];
 
-    $query = "(INSERT INTO Location (/*TODO gps location*/, Building_name, Floor, Room_number, Street_address)
-              VALUES('.$GPS_location.','.$Building_name.','.$Room_number.','.$Street_address.')";
+    $query = "INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
+              VALUES(".$GPS_location.",".$Floor.",".$Room_number.",".$Street_address.")";
+
+    
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());

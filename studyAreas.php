@@ -8,7 +8,7 @@
     or die('Connection Error: ' . mysql_error());
   echo "Connected to MySQL<br>";
 
-  mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
+  mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
   
   // Find all buildings in database and list them along with their GPS Location
   $data = "(

@@ -8,7 +8,7 @@
     or die('Connection Error: ' . mysql_error());
   echo "Connected to MySQL<br>";
 
-  mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
+  mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
   
   // Find all Wifi Speeds Already Found Inside of Database and their building
   $data = "(

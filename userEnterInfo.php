@@ -18,7 +18,7 @@
     $dbc = mysql_connect($hostname, $username, $password)
       or die('Connection Error: ' . mysql_error());
 
-    mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
+    mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
     
 
     //$GPS_location = $_GET['GPS_location'];
@@ -34,8 +34,9 @@
 
     $query = "(INSERT INTO Location (Floor, Room_number, Wifi_speed)
               VALUES(".$Floor.",".$Room_number.",".$Speed.")";
+
     $addSpeed = "(INSERT INTO Instance (Wifi_speed, download, Instance_id, GPS_location, Number_id)
-                  VALUES (".$value.", ".$download.", ".$instance.", ".$location.", ".$number."))"
+                  VALUES (".$value.", ".$download.", ".$instance.", ".$location.", ".$number."))";
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());

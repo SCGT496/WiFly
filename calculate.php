@@ -7,6 +7,8 @@
     or die('Connection Error: ' . mysql_error());
   	echo "Connected to MySQL<br>";
 
+  	mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
+
     $Speed = file_get_contents( 'wiFiCalc.js');
     $download = true;
     $instance = 1;

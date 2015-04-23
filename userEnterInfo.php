@@ -22,9 +22,8 @@
     
     $Floor = $_GET['Floor'];
     $Room_number = $_GET['Room_number'];
-    $Street_address = $_GET['Street_address'];
 
-    $query = "INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
+    $query = "(INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
               VALUES(".$GPS_location.",".$Floor.",".$Room_number.",".$Street_address.")";
 
     $result = mysql_query($query, $dbc)

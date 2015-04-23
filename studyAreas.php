@@ -10,10 +10,10 @@
 
   mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
   
-  // Find all Wifi Speeds Already Found Inside of Database and their building
+  // Find all buildings in database and list them along with their GPS Location
   $data = "(
-    SELECT ALL Wifi_speed AND GPS_location 
-    FROM Instance
+    SELECT ALL GPS_location AND Building_name
+    FROM Location
   )";
 
   // if result is false, it will throw an error showing it did not work 

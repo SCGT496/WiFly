@@ -22,8 +22,6 @@
 
     mysql_select_db('yourusername', $dbc) or die('DB Selection Error' .mysql_error());
     
-    $GPS_location = /*TODO*/;
-    $Building_name = $_POST['Building_name'];
     $Floor = $_POST['Floor'];
     $Room_number = $_POST['Room_number'];
     $Street_address = $_POST['Street_address'];

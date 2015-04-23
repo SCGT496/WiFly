@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -25,8 +24,13 @@
     $Room_number = $_GET['Room_number'];
     $Street_address = $_GET['Street_address'];
 
+<<<<<<< HEAD
     $query = "(INSERT INTO Location (Floor, Room_number, Street_adress)
               VALUES(".$Floor.",".$Room_number.",".$Street_address.")";
+=======
+    $query = "INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
+              VALUES(".$GPS_location.",".$Floor.",".$Room_number.",".$Street_address.")";
+>>>>>>> 3553bb892e12f4836ed18867acfc423e2e434215
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());
@@ -41,5 +45,9 @@
     echo ', GPS location: ' . $GPS_location . '<br />';
     
   ?>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+
+>>>>>>> 3553bb892e12f4836ed18867acfc423e2e434215

@@ -20,11 +20,13 @@
 
     mysql_select_db('createdb', $dbc) or die('DB Selection Error' .mysql_error());
     
+
+    //$GPS_location = $_GET['GPS_location'];
     $Floor = $_GET['Floor'];
     $Room_number = $_GET['Room_number'];
-
-    $query = "(INSERT INTO Location ( GPS_location, Floor, Room_number, Street_adress)
-              VALUES(".$GPS_location.",".$Floor.",".$Room_number.",".$Street_address.")";
+    $Speed = ;
+    $query = "(INSERT INTO Location (Floor, Room_number, Wifi_speed)
+              VALUES(".$Floor.",".$Room_number.",".$Speed.")";
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());
@@ -32,11 +34,10 @@
     mysql_close($dbc);
 
     echo 'Thanks for submitting the form.<br />';
-    echo 'You are in ' . $Building_name;
+    //echo 'You are in ' . $Building_name;
     echo ' on floor ' . $Floor . '<br />';
     echo ' in room ' . $Room_number . '<br />';
-    echo ', street: ' . $Street_address . '<br />';
-    echo ', GPS location: ' . $GPS_location . '<br />';
+    //echo ', GPS location: ' . $GPS_location . '<br />';
     
   ?>
 </body>

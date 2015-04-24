@@ -31,8 +31,9 @@
        die("<script>location.href = 'index2.html'</script>");  // if the information is correct, take them to index page
     }
 
-    mysql_close($dbc);
-
     echo 'Thanks you for logging in.<br />';
     echo 'Welcome ' . $Username;
+
+    mysql_close($dbc);
+
     

@@ -20,4 +20,8 @@
   $result = mysql_query($data, $dbc)
       or die('Query Error: ' . mysql_error());
 
+  echo .$data;
+  
+  mysql_close($dbc);
+
 ?>

@@ -51,7 +51,8 @@
     echo ' on floor ' . $Floor . '<br />';
     echo ' in room ' . $Room_number . '<br />';
     //echo ', GPS location: ' . $GPS_location . '<br />';
-    
+    mysql_close($dbc);
+
   ?>
 </body>
 </html>

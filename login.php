@@ -36,4 +36,4 @@
 
     mysql_close($dbc);
 
-    
+    ?>

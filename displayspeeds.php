@@ -21,7 +21,5 @@
       or die('Query Error: ' . mysql_error());
 
   echo .$data;
-  
-  mysql_close($dbc);
 
 ?>

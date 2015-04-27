@@ -31,10 +31,31 @@
   <body>
 
     <div class="container">
+    <p id="demo"></p>
 
       <form class="form-addspeed" action="userEnterInfo.php">
       <!--need to put the javascript to get their gps location in here & verify their location, their OS -->
- 
+      <a href="http://jquery.com/">jQuery</a>
+      <script src="jquery.js"></script>
+      <script type="text/javascript">
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+            var foo = '<?php echo $foo ?>'
+            var variableToSend = position.coords.latitude + " " + position.coords.longitude;
+            $.post('file.php', {variable: variableToSend});
+        }
+        
+      </script>
+      
         <h2 class="form-add speed-heading">Add Your Speed Data</h2>
         <!--the stuff for wifi speed entry drop down menu-->
             <select>

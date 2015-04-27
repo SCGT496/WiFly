@@ -14,7 +14,20 @@
       <p align="center">
         <div id="banner">
           <p align="center">
-              <a href="studyAreas.html">
+            <script>
+            function checkMobile(){
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                <a href="studyAreas.html">
+                Wifi Study Areas</a>
+                <a href="displayspeeds.html">
+                  View all Speeds</a>
+                  <a href="bestlocation.html">
+                    Best Speed Near You</a>
+                        <a href="squadfree/index.html">
+                        About Us</a>
+              }
+              else{
+                <a href="studyAreas.html">
                 Wifi Study Areas</a>
                 <a href="displayspeeds.html">
                   View all Speeds</a>
@@ -24,6 +37,9 @@
                       Add Speed Data</a>
                         <a href="squadfree/index.html">
                         About Us</a>
+              }
+            }
+            </script>
           </p>
       </div>
 

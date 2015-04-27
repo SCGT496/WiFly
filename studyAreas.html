@@ -11,22 +11,36 @@
   <body>
     </div>
     <div id="topcontent">
-      <p align="center">
-      <div id="banner">
-          <p align="center">
-            <a href="index2.html">
-              Home |</a>
-              <a href="studyAreas.html">
-                | Wifi Study Areas |</a>
-                <a href="displaySpeeds.html">
-                  | View all Speeds |</a>
-                  <a href="bestLocation.html">
-                    | Best Speed Near You |</a>
-                    <a href="userEnterInfo.html">
-                      | Add Speed Data |</a>
-                        <a href="squadfree/index.html">
-                          | About Us</a>
-          </p>
+      <p id="content" align="center">
+       <span id="mobile">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+
+       <span id="desktop">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="userEnterInfo.html">Add Speed Data</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+      </p>
+
+      <script>
+      window.onload = function() {
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                  document.getElementById("desktop").style.display = 'none';
+                  document.getElementById("mobile").style.display = 'block';
+              }
+              else{
+                  document.getElementById("desktop").style.display = 'block';
+                  document.getElementById("mobile").style.display = 'none';
+              }
+      }
+      </script>
+
 
           <h2 align="center">
             WiFly</h2>

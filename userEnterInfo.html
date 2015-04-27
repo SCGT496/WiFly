@@ -5,6 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <div id="topcontent">
+      <p id="content" align="center">
+       <span id="mobile">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+
+       <span id="desktop">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="userEnterInfo.html">Add Speed Data</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+      </p>
+
+      <script>
+      window.onload = function() {
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                  document.getElementById("desktop").style.display = 'none';
+                  document.getElementById("mobile").style.display = 'block';
+              }
+              else{
+                  document.getElementById("desktop").style.display = 'block';
+                  document.getElementById("mobile").style.display = 'none';
+              }
+      }
+      </script>
+    
+    
+    
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">

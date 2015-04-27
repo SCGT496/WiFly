@@ -22,6 +22,7 @@
     
 
     //$GPS_location = $_GET['GPS_location'];
+    $GPS_location = $_POST['variable'];
     //$Floor = $_GET['Floor'];
     //$Room_number = $_GET['Room_number'];
     //$Street_adress = $_GET['Street_adress'];
@@ -45,11 +46,11 @@
       //or die('Query Error: ' . mysql_error());
 
     echo 'Thanks for submitting the form.<br />';
-    //echo 'You are in ' . $Building_name;
-    //echo ' on floor ' . $Floor . '<br />';
-    //echo ' in room ' . $Room_number . '<br />';
+    echo 'You are in ' . $Building_name;
+    echo ' on floor ' . $Floor . '<br />';
+    echo ' in room ' . $Room_number . '<br />';
     echo $value;
-    //echo ', GPS location: ' . $GPS_location . '<br />';
+    echo ', GPS location: ' . $GPS_location . '<br />';
     mysql_close($dbc);
 
   ?>

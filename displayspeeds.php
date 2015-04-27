@@ -17,9 +17,12 @@
   )";
 
   // if result is false, it will throw an error showing it did not work 
-  $result = mysql_query($data, $dbc)
+  $results = mysql_query($data, $dbc)
       or die('Query Error: ' . mysql_error());
 
-  echo .$data;
+  var_dump($results);
+  //while ($row = mysql_fetch_array($result, MYSQL_ASSOC) {
+  //    print_r($row);
+  //}
 
 ?>

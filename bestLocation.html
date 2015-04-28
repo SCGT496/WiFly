@@ -1,3 +1,48 @@
+<!DOCTYPE HTML PUBLIC >
+<html\ xml:lang="en" lang="en">
+<head>
+  <title>WiFly</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" wifly " />
+    <meta name="description" content=" GWU wifi speed, search and compile database " />
+
+
+
+
+<div id="topcontent">
+      <p id="content" align="center">
+       <span id="mobile">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+
+       <span id="desktop">
+          <a href="studyAreas.html">Wifi Study Areas</a>
+          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="bestlocation.html">Best Speed Near You</a>
+          <a href="userEnterInfo.html">Add Speed Data</a>
+          <a href="squadfree/index.html">About Us</a>
+       </span>
+      </p>
+
+      <script>
+      window.onload = function() {
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                  document.getElementById("desktop").style.display = 'none';
+                  document.getElementById("mobile").style.display = 'block';
+              }
+              else{
+                  document.getElementById("desktop").style.display = 'block';
+                  document.getElementById("mobile").style.display = 'none';
+              }
+      }
+      </script>
+    
+
+
 <?php
   // logs into SQL locally
   // when connected online, will need to be matched to correct host server, username, and password
@@ -34,3 +79,19 @@
   mysql_close($dbc)
   or die(mysql_error());
 ?>
+
+
+<div id="bottomcontent">
+        <hr>
+        <p align="center">
+        <p>
+        Created by Si Chen, Nadia Chilmonik, Maria Sinagra, and Leslie Ogu.
+        <p>
+        Databases & Team Projects Spring 2015 Final Project: Wi-Fly.
+        <p>
+        MIT License (MIT) Copyright (c) 2015 by Si Chen, Nadia Chilmonik, Maria Sinagra, and Leslie Ogu. Source code available on <a href="https://github.com/sichen08/WiFly/"> GitHub</a>.
+        </p>
+      </div>
+
+  </body>
+</html>

@@ -37,7 +37,7 @@
               VALUES(".$Floor.",".$Room_number.",".$Speed.")";
 
     $addSpeed = "(INSERT INTO Instance (Wifi_speed, download, Instance_id, GPS_location, Number_id)
-                  VALUES (".$value.", ".$download.", ".$instance.", ".$location.", ".$number."))";
+                  VALUES (".$value.", ".$download.", ".$instance.", ".$GPS_location.", ".$number."))";
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());

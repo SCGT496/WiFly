@@ -44,7 +44,34 @@
     <h2>WiFi Speeds in the System</h2>
     
     <p>Speeds Recorded in the System</p>
-      <form method="" action="displayspeeds.php"></form>
-    
+    <!--  <form method="" action="displayspeeds.php"></form> -->
+        <?php
+      // logs into SQL locally
+      // when connected online, will need to be matched to correct host server, username, and password
+      $username = "root";
+      $password = "";
+      $hostname = "localhost";
+      $dbc = mysql_connect($hostname, $username, $password)
+        or die('Connection Error: ' . mysql_error());
+      echo "Connected to MySQL<br>";
+
+      mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
+      
+      // Find all Wifi Speeds Already Found Inside of Database and their building
+      $data = "(
+        SELECT ALL Wifi_speed 
+        FROM Instance
+      )";
+
+      // if result is false, it will throw an error showing it did not work 
+      $results = mysql_query($data, $dbc)
+          or die('Query Error: ' . mysql_error());
+
+      // var_dump($results);
+      //while ($row = mysql_fetch_array($result, MYSQL_ASSOC) {
+      //    print_r($row);
+      //}
+      echo $data;
+    ?>
   </body>
 </html>

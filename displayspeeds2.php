@@ -10,14 +10,14 @@
       <p id="content" align="center">
        <span id="mobile">
           <a href="studyAreas.html">Wifi Study Areas</a>
-          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="displayspeeds2.php">View all Speeds</a>
           <a href="bestlocation.html">Best Speed Near You</a>
           <a href="squadfree/index.html">About Us</a>
        </span>
 
        <span id="desktop">
           <a href="studyAreas.html">Wifi Study Areas</a>
-          <a href="displayspeeds.html">View all Speeds</a>
+          <a href="displayspeeds2.php">View all Speeds</a>
           <a href="bestlocation.html">Best Speed Near You</a>
           <a href="userEnterInfo.html">Add Speed Data</a>
           <a href="squadfree/index.html">About Us</a>
@@ -65,22 +65,22 @@
       
       // Find all Wifi Speeds Already Found Inside of Database and their building
       $data = "(
-        SELECT Wifi_speed AND GPS_location
+        SELECT Wifi_speed, GPS_location
         FROM Instance
       )";
 
       // if result is false, it will throw an error showing it did not work 
       $results = mysql_query($data, $dbc);
-          or die('Query Error: ' . mysql_error());
+          //or die('Query Error: ' . mysql_error());
       
-      //$assoc = mysql_fetch_assoc($results);
+      // $assoc = mysql_fetch_assoc($results);
 
-      //var_dump($assoc);
-      
-      while ($row = mysql_fetch_array($results)) {
-          echo $row['Wifi_speed'];
-          echo $row['GPS_location'];
+      // iterates through array of values in column of table and will print every row
+      while($rows = mysql_fetch_array($results, MYSQL_ASSOC)) {
+          print_r($rows);
       }
+
+      // var_dump($assoc);
 
 ?>
 

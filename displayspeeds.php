@@ -1,3 +1,6 @@
+//NOT USING THIS-- MIGRATED THE PHP OVER TO THE HTML PAGE VERSION OF THIS
+
+
 <?php
   // logs into SQL locally
   // when connected online, will need to be matched to correct host server, username, and password

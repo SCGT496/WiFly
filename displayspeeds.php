@@ -15,7 +15,7 @@
   
   // Find all Wifi Speeds Already Found Inside of Database and their building
   $data = "(
-    SELECT ALL Wifi_speed 
+    SELECT *
     FROM Instance
   )";
 

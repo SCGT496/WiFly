@@ -68,7 +68,7 @@
 
       <!-- <form class="form-addspeed" action="userEnterInfo.php">-->
       
-      <!--need to put the javascript to get their gps location in here & verify their location, their OS -->
+      <!--need to put the javascript to get their gps location in here & verify their location, their OS 
       <a href="http://jquery.com/">jQuery</a>
       <script src="jquery.js"></script>
       <script type="text/javascript">
@@ -89,17 +89,47 @@
         }
         
       </script>
-      
+      -->
+
+      Current Location: <BR>
+
+      <button onclick="getLocation()">Locate</button>
+
+      <p id="demo">
+          Latitude: <input type="text" id="lat">
+          Longitude: <input type="text" id="lon">
+      </p>
+
+      <script>
+          function getLocation() {
+              if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                  x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+      }
+
+          function showPosition(position) {
+              document.getElementById("lat").value = position.coords.latitude;
+              document.getElementById("lon").value = position.coords.longitude;
+
+      }
+      </script>
+
+
+
         <h2 class="form-add speed-heading">Add Your Speed Data</h2>
-        <!--the stuff for wifi speed entry drop down menu-->
+        <!--the stuff for wifi speed entry drop down menu
             <select>
               <option value="@38.6740459,-76.2972025,8z">Science and Engineering Hall</option>}
               <option value="@38.9000607,-77.0485127,21z">Phillips Hall</option>
               <option value="@38.8994105,-77.048447,21z">Starbucks</option>
               <option value="@38.8992414,-77.0481714,21z">Gelman Library</option>
             </select>
-            <br>
+            <br>-->
             <!--end of stuff for wifi speed entry drop down-->
+          <label for="GPS_location">Enter in the above GPS location with this syntax "@latitude,longitude":</label>
+          <input type="text" name="GPS_location" /><br />
           <label for="Floor">Floor:</label>
           <input type="text" name="Floor" /><br />
           <label for="Room_number">Room Number:</label>
@@ -118,9 +148,17 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       </form>
 
-    </div> <!-- /container -->
-   <!--need desktop vs laptop radio buttons-->
-
+    <div id="bottomcontent">
+        <hr>
+        <p align="center">
+        <p>
+        Created by Si Chen, Nadia Chilmonik, Maria Sinagra, and Leslie Ogu.
+        <p>
+        Databases & Team Projects Spring 2015 Final Project: Wi-Fly.
+        <p>
+        MIT License (MIT) Copyright (c) 2015 by Si Chen, Nadia Chilmonik, Maria Sinagra, and Leslie Ogu. Source code available on <a href="https://github.com/sichen08/WiFly/"> GitHub</a>.
+        </p>
+      </div>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>

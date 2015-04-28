@@ -19,8 +19,10 @@
   // if result is false, it will throw an error showing it did not work 
   $results = mysql_query($data, $dbc)
       or die('Query Error: ' . mysql_error());
+  
+  $assoc = mysql_fetch_assoc($results);
 
-  var_dump($results);
+  var_dump($assoc);
   //while ($row = mysql_fetch_array($result, MYSQL_ASSOC) {
   //    print_r($row);
   //}

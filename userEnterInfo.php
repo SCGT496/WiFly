@@ -17,27 +17,10 @@
     $Room_number = $_GET['Room_number'];
     $Street_adress = $_GET['Street_adress'];
     $Speed = file_get_contents( 'wiFiCalc.js');
-    //$download = true;
-    //$instance = 1;
-    //$location = 5;
-    //$number = 6;
-    $value = trim( str_replace( array( "document.write('", "');"), '', $Speed));
+    
 
     $query = "(INSERT INTO Location (Floor, Room_number, Wifi_speed)
               VALUES(".$Floor.",".$Room_number.",".$Speed.")";
-
-    <form method='post' id=myform>
-    <input type=hidden id=js-to-php value=0>
-    </form>
-    <script>
-      jQuery(document).ready(function(){
-        //calulcate the wifispeed using the long js code
-        //then save it in the field
-        $('#js-to-php').val(YOUR_SPEED);
-        // send the form
-        $('#myform').submit();
-      });
-    </script>
 
     $result = mysql_query($query, $dbc)
       or die('Query Error: ' . mysql_error());

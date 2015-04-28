@@ -15,7 +15,7 @@
   
   // Find all Wifi Speeds Already Found Inside of Database and their building
   $data = "(
-    SELECT Wifi_speed AND GPS_location
+    SELECT Wifi_speed, GPS_location
     FROM Instance
   )";
 

@@ -1,7 +1,7 @@
-CREATE DATABASE createdb;
+CREATE DATABASE createdInsertDB;
 
 Create TABLE `Instance` ( /*getting from javascript*/
-    `Wifi_speed` INT,
+    `Wifi_speed` VARCHAR(20),
     `Download` Bool, /*download=true upload=false*/
     `Instance_id` char(10),
     `GPS_location` VARCHAR(20),

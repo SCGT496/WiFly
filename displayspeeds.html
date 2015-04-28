@@ -45,7 +45,9 @@
     
     <p>Speeds Recorded in the System</p>
     <!--  <form method="" action="displayspeeds.php"></form> -->
-        <?php
+      
+
+      <?php
       // logs into SQL locally
       // when connected online, will need to be matched to correct host server, username, and password
       $username = "root";
@@ -67,11 +69,17 @@
       $results = mysql_query($data, $dbc)
           or die('Query Error: ' . mysql_error());
 
-      // var_dump($results);
+      //var_dump($results);
       //while ($row = mysql_fetch_array($result, MYSQL_ASSOC) {
       //    print_r($row);
       //}
-      echo $data;
+      
+      //echo $data;
+
+      //echo $results;
+
     ?>
+
+
   </body>
 </html>

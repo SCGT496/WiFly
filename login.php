@@ -8,10 +8,9 @@
     $dbc = mysql_connect($hostname, $username, $password)
       or die('Connection Error: ' . mysql_error());
     echo "Connected to MySQL<br>";
-
     
     mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
-    
+
     // will take input from the user, and check in database if login information matches any already in the database
     $Username = $_POST['inputEmail'];
     $Pass = $_POST['inputPassword'];    

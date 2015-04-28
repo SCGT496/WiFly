@@ -1,14 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Submit a WiFi Speed</title>
-</head>
-<body>
-  <h2>Submit a WiFi Speed</h2>
-
-  <?php
+<?php
   // logs into SQL locally
   // when connected online, will need to be matched to correct host server, username, and password
     $username = "root";
@@ -36,13 +26,20 @@
     $query = "(INSERT INTO Location (Floor, Room_number, Wifi_speed)
               VALUES(".$Floor.",".$Room_number.",".$Speed.")";
 
-    $addSpeed = "(INSERT INTO Instance (Wifi_speed, download, Instance_id, GPS_location, Number_id)
-                  VALUES (".$value.", ".$download.", ".$instance.", ".$GPS_location.", ".$number."))";
+    <form method='post' id=myform>
+    <input type=hidden id=js-to-php value=0>
+    </form>
+    <script>
+      jQuery(document).ready(function(){
+        //calulcate the wifispeed using the long js code
+        //then save it in the field
+        $('#js-to-php').val(YOUR_SPEED);
+        // send the form
+        $('#myform').submit();
+      });
+    </script>
 
     $result = mysql_query($query, $dbc)
-      or die('Query Error: ' . mysql_error());
-
-    $result2 = mysql_query($addSpeed, $dbc)
       or die('Query Error: ' . mysql_error());
 
     echo 'Thanks for submitting the form.<br />';
@@ -54,5 +51,3 @@
     mysql_close($dbc);
 
   ?>
-</body>
-</html>

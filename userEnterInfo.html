@@ -125,8 +125,8 @@
         var downloadSize = 4995374; //bytes
 
         
-            var oProgress = document.getElementById("progress");
-            oProgress.innerHTML = "Loading the image, please wait...";
+            var oProgress1 = document.getElementById("progress");
+            oProgress1.innerHTML = "Loading the image, please wait...";
             window.setTimeout(MeasureConnectionSpeed, 1);
         
 
@@ -152,7 +152,7 @@
                 var bitsLoaded = downloadSize * 8;
                 var speedMbps = (speedKbps / 1024).toFixed(2);
                 document.getElementById("wifiSpeed").value = speedMbps;
-                oProgress.innerHTML = "Your connection speed is: <br />" + speedMbps + " Mbps<br />";
+                oProgress1.innerHTML = "Your connection speed is: <br />" + speedMbps + " Mbps<br />";
             }
         }
         }

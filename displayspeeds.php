@@ -13,21 +13,26 @@
 
   mysql_select_db('createinsertdb', $dbc) or die('DB Selection Error' .mysql_error());
   
+  echo "TESTTTTTTTT";
+
   // Find all Wifi Speeds Already Found Inside of Database and their building
   $data = "(
-    SELECT *
+    SELECT Wifi_speed AND GPS_location
     FROM Instance
   )";
 
   // if result is false, it will throw an error showing it did not work 
-  $results = mysql_query($data, $dbc)
-      or die('Query Error: ' . mysql_error());
+  $results = mysql_query($data, $dbc);
+      //or die('Query Error: ' . mysql_error());
   
-  $assoc = mysql_fetch_assoc($results);
+  //$assoc = mysql_fetch_assoc($results);
 
-  var_dump($assoc);
-  //while ($row = mysql_fetch_array($result, MYSQL_ASSOC) {
-  //    print_r($row);
-  //}
+  //var_dump($assoc);
+  
+  while ($row = mysql_fetch_array($results)) {
+      echo "TESTTTTTTTT";
+      echo $row['Wifi_speed'];
+      echo $row['GPS_location'];
+  }
 
 ?>

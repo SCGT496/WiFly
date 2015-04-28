@@ -17,7 +17,6 @@
     $Room_number = $_GET['Room_number'];
     $Street_adress = $_GET['Street_adress'];
     $Speed = file_get_contents( 'wiFiCalc.js');
-    
 
     $query = "(INSERT INTO Location (Floor, Room_number, Wifi_speed)
               VALUES(".$Floor.",".$Room_number.",".$Speed.")";

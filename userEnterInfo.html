@@ -100,6 +100,12 @@
           Longitude: <input type="text" id="lon">
       </p>
 
+      Current Wifi Speed: <BR>
+      <button onclick="calculateWifiSpeed()">Calculate</button>
+      <p id="demo">
+          Wifi Speed: <input type="text" id="wifiSpeed">
+      </p>
+        
       <script>
           function getLocation() {
               if (navigator.geolocation) {
@@ -116,7 +122,44 @@
       }
       </script>
 
+<script>
+calculateWifiSpeed(){
+  var imageAddr = "http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg"; 
+        var downloadSize = 4995374; //bytes
 
+        
+            var oProgress = document.getElementById("progress");
+            oProgress.innerHTML = "Loading the image, please wait...";
+            window.setTimeout(MeasureConnectionSpeed, 1);
+        
+
+        function MeasureConnectionSpeed() {
+            var oProgress = document.getElementById("progress");
+            var startTime, endTime;
+            var download = new Image();
+            download.onload = function () {
+                endTime = (new Date()).getTime();
+                showResults();
+            }
+            
+            download.onerror = function (err, msg) {
+                oProgress.innerHTML = "Invalid image, or error downloading";
+            }
+            
+            startTime = (new Date()).getTime();
+            var cacheBuster = "?nnn=" + startTime;
+            download.src = imageAddr + cacheBuster;
+            
+            function showResults() {
+                var duration = (endTime - startTime) / 1000;
+                var bitsLoaded = downloadSize * 8;
+                var speedMbps = (speedKbps / 1024).toFixed(2);
+                document.getElementById("wifiSpeed").value = speedMbps;
+                oProgress.innerHTML = "Your connection speed is: <br />" + speedMbps + " Mbps<br />";
+            }
+        }
+        }
+</script>
 
         <h2 class="form-add speed-heading">Add Your Speed Data</h2>
         <!--the stuff for wifi speed entry drop down menu
@@ -128,8 +171,16 @@
             </select>
             <br>-->
             <!--end of stuff for wifi speed entry drop down-->
+          <label for="GPS_location">Enter in the above GPS location with this syntax "latitude,longitude":</label>
+          <input type="text" name="GPS_location" /><br />
+          <label for="Wifi_speed">Enter in the above wifi speed:</label>
+          <input type="text" name="Wifi_speed" /><br />
+          <label for="Building_name">Building Name:</label>
+          <input type="text" name="Building_name" /><br />
+
           <label for="GPS_location">Enter in the above GPS location with this syntax "@latitude,longitude":</label>
           <input type="text" name="GPS_location" /><br />
+
           <label for="Floor">Floor:</label>
           <input type="text" name="Floor" /><br />
           <label for="Room_number">Room Number:</label>
